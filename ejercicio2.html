@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Registro Estudiantes</h1>
+    <label for="">Ingrese el nombre: </label>
+    <input type="text" id="nombre"> <br>
+    <label for="">Ingrese el carnet: </label>
+    <input type="text" id="carnet"> <br>
+    <label for="">Ingrese la nota del Examen: </label>
+    <input type="text" id="examen"> <br>
+    <label for="">Ingrese la nota de las tareas: </label>
+    <input type="text" id="tareas"> <br>
+    <label for="">Ingrese la asistencia: </label>
+    <input type="text" id="asistencia"> <br>
+    <label for="">Ingrese la nota de investigación: </label>
+    <input type="text" id="investigacion"> <br>
+    <button onclick="calcular()">Calcular</button>
+    <p></p>
+</body>
+<script>
+    let nombre = document.getElementById('nombre');
+    let carnet = document.getElementById('carnet');
+    const examen = document.querySelector('#examen');
+    const tareas = document.querySelector('#tareas');
+    const asistencia = document.querySelector('#asistencia');
+    const investigacion = document.querySelector('#investigacion');
+    let parrafo = document.querySelector('p');
+
+    function calcular() {
+        let notas = Number(examen.value) * 0.20 + Number(tareas.value) * 0.40 + Number(asistencia.value) * 0.10 + Number(investigacion.value) * 0.30;
+        parrafo.textContent = "El alumno : " + nombre.value + " con carnet " + carnet.value + " su nota final es: " + notas;
+    }
+</script>
+
+</html>
