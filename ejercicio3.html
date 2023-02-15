@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Registro Estudiantes</h1>
+    <label for="">Ingrese el nombre: </label>
+    <input type="text" id="nombre"> <br>
+    <label for="">Ingrese el salario: </label>
+    <input type="text" id="salario"> <br>
+    <label for="">Selecione la categoria</label>
+    <select id="categoria">
+        <option value="">Selecione una categoria</option>
+        <option value="A">A</option>
+        <option value="B">B</option>
+        <option value="C">C</option>
+        <option value="D">D</option>
+    </select> <br>
+    <button class="boton">Enviar</button> <br>
+    <p></p>
+</body>
+
+<script>
+    let boton = document.querySelector('.boton');
+    let salario = document.getElementById('salario');
+    let nombre = document.querySelector('#nombre');
+    let categoria = document.getElementById("categoria");
+    let parrafo = document.querySelector('p');
+
+    boton.addEventListener('click', () => {
+        switch (categoria.value) {
+            case "A":
+                var aumento = Number(salario.value) * 0.15;
+                var aumentof = aumento + Number(salario.value);
+                parrafo.textContent = "El empleado " + nombre.value + " que esta en la categoria " + categoria.value +
+                    " su salario actual es de: $" + salario.value + " tendra un aumento, y será de un 15% por la tanto su " +
+                    "nuevo salario es: $" + aumentof;
+                break;
+            case "B":
+                var aumento = Number(salario.value) * 0.30;
+                var aumentof = aumento + Number(salario.value);
+                parrafo.textContent = "El empleado " + nombre.value + " que esta en la categoria " + categoria.value +
+                    " su salario actual es de: $" + salario.value + " tendra un aumento, y será de un 30% por la tanto su " +
+                    "nuevo salario es: $" + aumentof;
+                break;
+            case "C":
+                var aumento = Number(salario.value) * 0.10;
+                var aumentof = aumento + Number(salario.value);
+                parrafo.textContent = "El empleado " + nombre.value + " que esta en la categoria " + categoria.value +
+                    " su salario actual es de: $" + salario.value + " tendra un aumento, y será de un 10% por la tanto su " +
+                    "nuevo salario es: $" + aumentof;
+                break;
+            case "D":
+                var aumento = Number(salario.value) * 0.20;
+                var aumentof = aumento + Number(salario.value);
+                parrafo.textContent = "El empleado " + nombre.value + " que esta en la categoria " + categoria.value +
+                    " su salario actual es de: $" + salario.value + " tendra un aumento, y será de un 20% por la tanto su " +
+                    "nuevo salario es: $" + aumentof;
+                break;
+            default:
+                break;
+        }
+    })
+</script>
+
+</html>
