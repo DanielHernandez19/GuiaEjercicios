@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <label for="">Ingrese el primer numero</label>
+    <input type="text" id="numero1">
+    <br>
+    <label for="">Ingrese el segundo numero</label>
+    <input type="text" id="numero2">
+    <br>
+    <button id="calcular">Calcular</button>
+    <p></p>
+</body>
+<script>
+    const numero1 = document.querySelector('#numero1');
+    const numero2 = document.querySelector('#numero2');
+    let calcular = document.querySelector('#calcular');
+    let parrafo = document.querySelector('p');
+
+    calcular.addEventListener('click', () => {
+        if (Number(numero1.value) > Number(numero2.value)) {
+            parrafo.textContent = "El numero 1 es mayor";
+        } else {
+            parrafo.textContent = "El numero 2 es mayor";
+        }
+    })
+</script>
+
+</html>
