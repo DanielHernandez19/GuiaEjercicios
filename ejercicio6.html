@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Viajes Turisticos</h1>
+    <label for="">Seleccione el punto de origen</label><br>
+    <select id="origen">
+        <option value="">Seleccione una opcion</option>
+        <option value="palma">La palma</option>
+    </select>
+    <br>
+    <label for="">Seleccione el punto de destino</label><br>
+    <select id="destino">
+        <option value="la_costa">La costa del Sol</option>
+        <option value="panchimalco">Panchimalco</option>
+        <option value="el_triunfo">Puerto el triunfo</option>
+        <option value="otro">Otro</option>
+    </select>
+    <br>
+    <button onclick="descuentos()">Enviar</button>
+    <br>
+    <p></p>
+</body>
+<script>
+    let origen = document.getElementById("origen");
+    let destino = document.getElementById("destino");
+    let parrafo = document.querySelector('p');
+
+    function descuentos() {
+        if (origen.value === 'palma' && destino.value === 'la_costa') {
+            parrafo.textContent = "Tendrá un descuento, y será de 5%";
+        } else if (origen.value === 'palma' && destino.value === 'panchimalco') {
+            parrafo.textContent = "Tendrá un descuento, y será de 10%";
+        } else if (origen.value === 'palma' && destino.value === 'el_triunfo') {
+            parrafo.textContent = "Tendrá un descuento, y será de 15%";
+        } else {
+            parrafo.textContent = "No tiene descuento";
+        }
+    }
+</script>
+
+</html>

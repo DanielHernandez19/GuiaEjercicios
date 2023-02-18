@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Calculadora de Temperatura</h1>
+    <label for="">Introduzca la Temperatura en grados Celsius</label>
+    <input type="text" id="celcius"><br>
+    <button onclick="calcular()">Enviar</button>
+    <p></p>
+</body>
+<script>
+    let celsius = document.querySelector("#celcius");
+    let parrafo = document.querySelector('p');
+
+    function calcular() {
+        let farenheit = (Number(celsius.value) * 1.8) + 32;
+        console.log(farenheit)
+        if (farenheit >= 14 && farenheit < 32) {
+            parrafo.textContent = "La temperatura es " + farenheit + "ºF, es baja";
+        } else if (farenheit >= 32 && farenheit < 68) {
+            parrafo.textContent = "La temperatura es " + farenheit + "ºF, es adecuada";
+        } else if (farenheit >= 68 && farenheit < 96) {
+            parrafo.textContent = "La temperatura es " + farenheit + "ºF, es alta"
+        } else {
+            parrafo.textContent = "La temperatura es " + farenheit + "ºF, es desconocida"
+        }
+    }
+</script>
+
+</html>
