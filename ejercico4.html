@@ -25,11 +25,8 @@
     let parrafo = document.querySelector('p');
 
     calcular.addEventListener('click', () => {
-        if (Number(numero1.value) > Number(numero2.value)) {
-            parrafo.textContent = "El numero 1 es mayor";
-        } else {
-            parrafo.textContent = "El numero 2 es mayor";
-        }
+        let numeroM = Math.max(Number(numero1.value), Number(numero2.value));
+        parrafo.textContent = "El numero " + numeroM + " es mayor"
     })
 </script>
 
